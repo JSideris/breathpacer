@@ -1,0 +1,21 @@
+<!doctype html>
+
+<html>
+<body id="body" style="background-color: #000;">
+<div style="position: fixed; bottom: 0px; opacity: 0.5; color: white; padding: 10px;">2016 Joshua Sideris | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XFMC6SQEDWU9W" target="_blank" style="color: white;">Contribute</a></div>
+</body>
+<script>
+	var time = 0;
+	var value = 0;
+	var interval = 0.002
+	function tick(){
+		time = time + interval;
+		value = Math.floor((-Math.cos(time) + 1)*0.5*255);
+		document.getElementById("body").style = "background-color: rgb(" + value + "," + value + "," + value + ");";
+		
+		setTimeout(tick, interval);
+	}
+	
+	tick();
+</script>
+</html>
